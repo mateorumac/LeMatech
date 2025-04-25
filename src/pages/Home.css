@@ -1,0 +1,837 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  position: relative;
+  background: url("../assets/subtle-prism.svg") no-repeat center/cover;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  padding-top: 4rem;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 3.7rem;
+  font-weight: bold;
+  line-height: 1.3;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  margin-bottom: 3rem;
+  white-space: normal;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1.3s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.hero-text h2.hero-subtitle {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.6;
+  opacity: 0;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  margin-bottom: 3.2rem;
+
+  transform: translateY(30px);
+  animation: slideUp 1.3s ease forwards;
+  animation-delay: 1s;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 1.8s;
+}
+
+.hero .cta-button {
+  background: #fff;
+  color: #000;
+  border: 2px solid #48cae4;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(72, 202, 228, 0.3);
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.hero .cta-button:hover {
+  background: #48cae4;
+  box-shadow: 0 8px 20px rgba(72, 202, 228, 0.5);
+}
+
+.hero-title {
+  display: inline;
+  white-space: nowrap;
+}
+
+/* ANIMACIJE */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ABOUT SECTION */
+.about {
+  padding: 30px 0px;
+  background-color: #1a1a1a;
+  color: #f8f8f8;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 3.2rem;
+  color: #f8f8f8;
+  margin-bottom: 1rem;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  transform: none;
+  transition: opacity 1s ease-out;
+}
+
+.service-card {
+  transition-delay: var(--delay-order, 0s);
+}
+
+.about-intro {
+  font-size: 1.3rem;
+  margin-bottom: 50px;
+  line-height: 1.9;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #e0e0e0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Montserrat", sans-serif;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.service-card {
+  background: linear-gradient(145deg, #1c1c1c, #111);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 30px rgba(72, 202, 228, 0.08);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: opacity, transform;
+}
+
+.service-card.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card {
+  transition-delay: var(--delay-order, 0s);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(72, 202, 228, 0.25);
+}
+
+.service-card img {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 0.5rem;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #48cae4;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #e0e0e0;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* KEYFRAMES */
+@keyframes slideUpUnified {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*WHY US*/
+
+.why-us-section {
+  background-color: #1a1a1a;
+  padding: 30px 20px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+}
+
+.why-us-section h2 {
+  font-size: 3.2rem;
+  color: #f8f8f8;
+  margin-bottom: 1rem;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.why-us-intro {
+  font-size: 1.3rem;
+  margin-bottom: 50px;
+  line-height: 1.9;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #e0e0e0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Montserrat", sans-serif;
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-card {
+  background: linear-gradient(145deg, #1c1c1c, #111);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 30px rgba(72, 202, 228, 0.08);
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-delay: var(--delay-order, 0s);
+}
+
+.why-card.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(72, 202, 228, 0.25);
+}
+
+.why-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #48cae4;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.why-card p {
+  font-size: 1rem;
+  color: #e0e0e0;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.why-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 0.5rem;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.why-card:hover .why-icon {
+  transform: scale(1.08);
+}
+
+/*PROJECTS */
+.projects {
+  padding: 60px 20px;
+  background-color: #1a1a1a;
+  color: #f8f8f8;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 3.2rem;
+  color: #f8f8f8;
+  margin-bottom: 1rem;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.projects-intro {
+  font-size: 1.3rem;
+  margin-bottom: 4rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #e0e0e0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.project-container {
+  overflow-x: auto;
+  overflow-y: visible;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 1rem;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 5rem;
+  scroll-behavior: smooth;
+  max-width: 1300px;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+.project-grid.no-card-layout {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+}
+
+.project-grid.no-card-layout a {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.project-grid.no-card-layout a:hover {
+  transform: translateY(-8px);
+}
+
+.project-image {
+  width: 450px;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+
+.project-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.project-container::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+
+.project-container::-webkit-scrollbar-thumb {
+  background: #48cae4;
+  border-radius: 10px;
+}
+
+.project-container::-webkit-scrollbar-thumb:hover {
+  background: #0096c7;
+  cursor: pointer;
+}
+
+/* Slide-in animacije s lijeva i desna */
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: var(--delay-order, 0s);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: var(--delay-order, 0s);
+}
+
+/* Kada postanu vidljivi */
+.animate-visible.slide-in-right,
+.animate-visible.slide-in-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/*RESPONSIVITY*/
+
+@media (max-width: 900px) {
+  .hero {
+    background-attachment: scroll;
+    min-height: 85vh;
+  }
+
+  .hero::before {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-container {
+    padding: 0 1.5rem;
+    gap: 2rem;
+    max-width: 800px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1.2s ease forwards;
+    animation-delay: 0.3s;
+  }
+
+  .hero-text h2.hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1.2s ease forwards;
+    animation-delay: 0.9s;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1.2rem;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 1.6s;
+  }
+
+  .hero-buttons .cta-button {
+    padding: 12px 32px;
+    font-size: 1.1rem;
+  }
+
+  .about h2 {
+    font-size: 2.8rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 3rem;
+    letter-spacing: 1.2px;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .about-intro {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+  .service-card {
+    padding: 2rem 1.5rem;
+  }
+  .why-us-section {
+    padding: 30px 1.5rem;
+  }
+  .why-us-section h2 {
+    font-size: 2.8rem;
+  }
+  .why-us-intro {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    padding: 0 1rem;
+  }
+  .why-us-grid {
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  .why-card {
+    padding: 2rem 1.5rem;
+  }
+  .why-card h3 {
+    font-size: 1.3rem;
+  }
+  .why-card p {
+    font-size: 0.95rem;
+  }
+  .why-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .projects h2 {
+    font-size: 2.6rem;
+  }
+  .projects-intro {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+  }
+  .project-container {
+    padding: 1rem 1.5rem 4rem;
+  }
+  .project-image {
+    width: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 100vh;
+    padding-top: 2rem;
+  }
+
+  .hero-container {
+    padding: 0 1rem;
+    gap: 2rem;
+    margin-top: -2rem;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(1.9rem, 6vw, 2.4rem);
+    line-height: 1.3;
+    padding: 0 0.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1.3s ease forwards;
+    animation-delay: 0.3s;
+  }
+
+  .hero-text h2.hero-subtitle {
+    margin-top: 3rem !important;
+    margin-bottom: 6rem !important;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0 1rem 2.2rem 1rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1.3s ease forwards;
+    animation-delay: 1s;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    justify-content: center;
+    padding: 0 1rem;
+    opacity: 0;
+    animation: fadeIn 1.6s ease forwards;
+    animation-delay: 1.8s;
+  }
+
+  .hero-buttons .cta-button {
+    width: 100%;
+    padding: 13px 0;
+    font-size: 1rem;
+  }
+
+  .about {
+    padding: 40px 0.5rem;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-intro {
+    font-size: 1.1rem;
+  }
+
+  .about-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  .service-card {
+    padding: 1.5rem 1rem;
+    text-align: left;
+  }
+  .service-card img {
+    margin: 0 auto 0.75rem;
+  }
+
+  .why-us-section {
+    padding: 25px 1rem;
+  }
+  .why-us-section h2 {
+    font-size: 2rem;
+  }
+  .why-us-intro {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  .why-us-grid {
+    gap: 1.2rem;
+  }
+  .why-card {
+    padding: 1.5rem 1rem;
+    text-align: left;
+  }
+  .why-card h3 {
+    font-size: 1.4rem;
+  }
+  .why-card p {
+    font-size: 0.9rem;
+  }
+  .why-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 0.5rem;
+  }
+
+  .projects h2 {
+    font-size: 2rem;
+  }
+  .projects-intro {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+  }
+  .project-container {
+    padding: 1rem;
+  }
+  .project-image {
+    width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    min-height: 100vh;
+    padding-top: 2rem;
+  }
+
+  .hero-container {
+    padding: 0 1rem;
+    gap: 1.8rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1.4s ease forwards;
+    animation-delay: 0.3s;
+  }
+
+  .hero-text h2.hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0 1rem 2rem 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1.4s ease forwards;
+    animation-delay: 1s;
+  }
+
+  .hero-buttons .cta-button {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .about {
+    padding: 40px 0.5rem;
+  }
+
+  .about h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .about-intro {
+    font-size: 1rem;
+  }
+
+  .services-grid {
+    gap: 1rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+  }
+  .service-card p {
+    font-size: 0.9rem;
+  }
+
+  .why-us-section {
+    padding: 20px 0.5rem;
+  }
+  .why-us-section h2 {
+    font-size: 1.8rem;
+  }
+  .why-us-intro {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .why-us-grid {
+    gap: 1rem;
+  }
+  .why-card {
+    padding: 1rem 0.75rem;
+  }
+  .why-card h3 {
+    font-size: 1.2rem;
+  }
+  .why-card p {
+    font-size: 0.85rem;
+  }
+  .why-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .projects {
+    padding: 30px 20px;
+  }
+
+  .projects h2 {
+    font-size: 1.8rem;
+  }
+  .projects-intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+  .project-container {
+    padding: 0.5rem;
+  }
+  .project-image {
+    width: 250px;
+  }
+}

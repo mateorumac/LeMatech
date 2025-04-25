@@ -1,0 +1,44 @@
+:root {
+    --navbar-height: 5rem;
+  }
+  
+  .terms-container,
+  .privacy-container {
+    scroll-margin-top: var(--navbar-height);
+  }
+
+.terms-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 8rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #ddd;
+    background-color: #1a1a1a;
+  }
+  
+  .terms-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #48cae4;
+  }
+  
+  .terms-container .last-updated {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 1.5rem;
+  }
+  
+  .terms-container h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #48cae4;
+  }
+  
+  .terms-container p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #ddd;
+  }
+  

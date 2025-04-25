@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/faviconR.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="preload" as="image" href="/cookie.webp" type="image/webp" />
+
+    <title>LeMatech - Digital | Web & App Development</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="LeMatech - Digital offers innovative and custom web design and development services, helping businesses achieve online success with optimized digital solutions."
+    />
+    <meta
+      name="keywords"
+      content="izrada web stranica, web development, web design, profesionalne web usluge, prilagođeni web, responsivni dizajn, mobilne stranice, ecommerce development, SEO usluge, LeMatech digital, izrada aplikacija, digitalni marketing, web optimizacija, UI/UX dizajn, izrada web aplikacija"
+    />
+    <meta name="author" content="LeMatech - Digital" />
+
+    <!-- Hreflang for Multilingual SEO -->
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.lematech-digital.com/en/"
+    />
+    <link
+      rel="alternate"
+      hreflang="hr"
+      href="https://www.lematech-digital.com/hr/"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.lematech-digital.com/en/"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta
+      property="og:title"
+      content="LeMatech - Digital | Professional Web Development"
+    />
+    <meta
+      property="og:description"
+      content="Transform your online presence with LeMatech - Digital, specializing in cutting-edge web development and digital strategies."
+    />
+    <meta
+      property="og:image"
+      content="https://www.lematech-digital.com/logo192.png"
+    />
+    <meta property="og:url" content="https://www.lematech-digital.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Canonical Link -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const path = window.location.pathname.split("/")[1];
+        const lang = path.match(/^(en|hr)$/) ? path : "en";
+        const canonicalURL = `https://www.lematech-digital.com/${lang}/`;
+        const link = document.createElement("link");
+        link.rel = "canonical";
+        link.href = canonicalURL;
+        document.head.appendChild(link);
+      });
+    </script>
+
+    <!-- Structured Data: SoftwareCompany with Services -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareCompany",
+        "name": "LeMatech - Digital",
+        "url": "https://www.lematech-digital.com",
+        "description": "LeMatech - Digital offers professional web development, SEO services, and custom digital solutions.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "KARDINALA ALOJZIJA STEPINCA 56",
+          "addressLocality": "ČRNKOVCI, Marijanci",
+          "postalCode": "31555",
+          "addressCountry": "HR"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+385 91 152 9422",
+          "contactType": "customer service",
+          "availableLanguage": ["English", "Croatian"]
+        },
+        "service": [
+          {
+            "@type": "Service",
+            "name": "Custom Website Development",
+            "serviceType": "Web Development"
+          },
+          {
+            "@type": "Service",
+            "name": "Web Design & UI/UX",
+            "serviceType": "Web Design"
+          },
+          {
+            "@type": "Service",
+            "name": "SEO & Digital Marketing",
+            "serviceType": "Search Engine Optimization"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Structured Data: WebPage Multilingual -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": {
+          "en": "LeMatech - Digital | Web & App Development",
+          "hr": "LeMatech - Digital | Izrada web stranica i aplikacija"
+        },
+        "description": {
+          "en": "LeMatech – Digital is your partner for professional web and app development. From responsive website design and custom web applications to SEO optimization, e‑commerce solutions and performance tuning, we deliver fast, secure and user‑centric digital experiences that boost engagement and conversions.",
+          "hr": "LeMatech – Digital je vaš pouzdani partner za profesionalnu izradu web stranica i aplikacija. Specijalizirani smo za responsivni dizajn, prilagođene web i mobilne aplikacije, SEO optimizaciju, e‑trgovinu i poboljšanje performansi, pružajući brza, sigurna i intuitivna digitalna rješenja koja podižu angažman i konverzije."
+        },
+        "url": "https://www.lematech-digital.com"
+      }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.lematech-digital.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://www.lematech-digital.com#services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Contact",
+            "item": "https://www.lematech-digital.com#contact"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Styles for Cookie Preferences Button -->
+    <style>
+      #open_preferences_center {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #48cae4;
+        color: #111;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000;
+        text-decoration: none;
+        opacity: 0;
+        transform: scale(0.8);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        transition-delay: 2.5s;
+      }
+      #open_preferences_center.show-cookie-button {
+        opacity: 1;
+        transform: scale(1);
+      }
+      #open_preferences_center:hover {
+        background-color: #0096c7;
+        transform: scale(1.1);
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        border: 0;
+      }
+      .cookie-icon {
+        width: 30px;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Language Switching Script -->
+    <script defer>
+      window.switchLanguage = function (lang) {
+        if (lang === "hr") {
+          document.documentElement.lang = "hr";
+          document.title =
+            "LeMatech - Digital | Izrada web stranica i aplikacija";
+          document
+            .querySelector('meta[name="description"]')
+            .setAttribute(
+              "content",
+              "LeMatech - Digital nudi inovativni i prilagođeni web dizajn, razvoj i SEO usluge."
+            );
+        } else {
+          document.documentElement.lang = "en";
+          document.title = "LeMatech - Digital | Web & App Development";
+          document
+            .querySelector('meta[name="description"]')
+            .setAttribute(
+              "content",
+              "LeMatech - Digital offers innovative and custom web design, development, and SEO services."
+            );
+        }
+      };
+    </script>
+
+    <!-- Cookie Consent by TermsFeed -->
+    <script
+      type="text/javascript"
+      src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js"
+      charset="UTF-8"
+    ></script>
+    <script type="text/javascript" charset="UTF-8">
+      document.addEventListener("DOMContentLoaded", function () {
+        cookieconsent.run({
+          notice_banner_type: "standalone",
+          consent_type: "express",
+          palette: "dark",
+          language: "en",
+          page_load_consent_levels: ["strictly-necessary"],
+          notice_banner_reject_button_hide: false,
+          preferences_center_close_button_hide: false,
+          page_refresh_confirmation_buttons: false,
+          website_name: "LeMatech - Digital",
+          website_privacy_policy_url:
+            "https://www.lematech-digital.com/privacy-policy",
+        });
+      });
+    </script>
+
+    <!-- Google Analytics -->
+    <script
+      type="text/plain"
+      data-cookie-consent="tracking"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-J9XF6CD8NT"
+    ></script>
+    <script type="text/plain" data-cookie-consent="tracking">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-J9XF6CD8NT');
+    </script>
+    <noscript
+      >Free cookie consent management tool by
+      <a href="https://www.termsfeed.com/">TermsFeed Generator</a></noscript
+    >
+
+    <!-- Cookie Preferences Button -->
+    <a
+      href="#"
+      id="open_preferences_center"
+      aria-label="Update cookies preferences"
+    >
+      <img src="/cookie.webp" alt="Cookie Icon" class="cookie-icon" />
+      <span class="sr-only">Update cookies preferences</span>
+    </a>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+          document.getElementById("open_preferences_center")?.classList.add("show-cookie-button");
+        }, 500);
+      });
+    </script>    
+  </body>
+</html>
